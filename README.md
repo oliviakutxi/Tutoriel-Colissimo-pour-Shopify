@@ -1,0 +1,45 @@
+{% if order_status_url %}
+            {% if fulfillment.tracking_company and fulfillment.tracking_company != 'Other' %} 
+              <table class="row actions">
+  <tr>
+    <td class="actions__cell">
+      <table class="button main-action-cell">
+        <tr>
+          <td class="button__cell"><a href="{{ order_status_url }}" class="button__text">Voir votre commande</a></td>
+        </tr>
+      </table>
+      {% if shop.url %}
+    <table class="link secondary-action-cell">
+      <tr>
+        <td class="link__cell"><a href="{{ shop.url }}" class="link__text"><span class='or'>ou</span> Visiter notre boutique</a></td>
+      </tr>
+    </table>
+{% endif %}
+
+    </td>
+  </tr>
+</table>
+
+			{% else %}
+              <table class="row actions">
+  <tr>
+    <td class="actions__cell">
+      <table class="button main-action-cell">
+        <tr>
+          <td class="button__cell"><a href="http://www.coliposte.net/particulier/suivi_particulier.jsp?colispart={{ fulfillment.tracking_numbers }}" class="button__text">Suivre votre commande</a></td>
+        </tr>
+      </table>
+      {% if shop.url %}
+    <table class="link secondary-action-cell">
+      <tr>
+        <td class="link__cell"><a href="{{ shop.url }}" class="link__text"><span class='or'>or</span> Visiter notre boutique</a></td>
+      </tr>
+    </table>
+{% endif %}
+
+    </td>
+  </tr>
+</table>			
+
+            {% endif %}
+            {% endif %}
